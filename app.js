@@ -1,13 +1,10 @@
-const canvas = document.getElementById('gameCanvas');
-const ctx = canvas.getContext('2d');
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+/*import Game from '/Users/andreimaria/dev/retroStar/game.js';*/
+import  Game  from './game.js'; // Assuming bullet.js is in the same directory
 
-function gameLoop() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    // Add your update logic here
-
-    requestAnimationFrame(gameLoop);
-}
-
-requestAnimationFrame(gameLoop);
+document.addEventListener('DOMContentLoaded', () => {
+    const canvas = document.getElementById('gameCanvas');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    const game = new Game(canvas);
+    game.init();
+});
